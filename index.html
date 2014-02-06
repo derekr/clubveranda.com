@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Club Veranda! BEEEOOWWWW BBBBBBEEEOWWWWWW BEEOW!</title>
+
+    <style>
+        body {
+            padding: 40px;
+
+            background-color: #000;
+            background-image: url("/bg1.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            color: #fff;
+        }
+
+        h1 span.on {
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+
+<h1>
+    Club 
+    <br>
+    <span>V</span>
+    <span>e</span>
+    <span>r</span>
+    <span>a</span>
+    <span>n</span>
+    <span>d</span>
+    <span>a</span>
+</h1>
+
+<p>
+    Barryville, NY
+</p>
+
+<p>
+    Time and location TBD.
+</p>
+
+<p>
+    BEEEOOWWWW BBBBBBEEEOWWWWWW BEEOW!
+</p>
+
+<script>
+    function alternate () {
+        setTimeout(function () {
+            var $v = document.querySelectorAll('h1 span');
+
+            for (i = 0; i < $v.length; i++) {
+                var $l = $v[i];
+
+                if ($l.classList.contains('on')) {
+                    $l.classList.remove('on');
+                } else {
+                    $l.classList.add('on');
+                }
+            }
+
+            alternate();
+        }, 100);
+    }
+
+    function init () {
+        var $v = document.querySelectorAll('h1 span');
+
+        for (i in $v) {
+            if (i % 2) $v[i].classList.add('on');
+        }
+
+        alternate();
+    }
+
+    init();
+</script>
+
+</body>
+</html>
